@@ -34,7 +34,7 @@ layout: quote
 
 TL;DR: A spacing system is a key component of a Design System that defines consistent, standardized spacing rules.
 
-A spacing system in a web design system is a set of standardized, predefined values that dictate the spacing used throughout a digital product or website. 
+A spacing system is a set of standardized, predefined values that dictate the spacing used throughout a digital product or website. 
 
 This system provides consistent spacing (e.g., margins, paddings, gaps) across various elements, layouts, and components, improving visual harmony and making the design process faster and more scalable.
 
@@ -43,7 +43,7 @@ layout: quote
 ---
 
 # ❝Root Font Size❞
-TL;DR: The root font size is set on the HTML element of a webpage and some elements in the page scale with it. 
+TL;DR: The root font size is set on the `<html/>` element of a webpage and some elements in the page scale with it. 
 
 
 The root font size serves as the base font size for the entire document, and it’s typically specified in pixels (e.g., 16px).
@@ -176,9 +176,7 @@ layout: fact
     <br/>
     ☐ Designing The Spacing System <br/>
     <br/>
-    ☐ Converting <br/>
-    <br/>
-    ☐ Testing <br/>
+    ☐ Converting to the new Spacing System <br/>
     <br/>
     ☐ Enforcing future consistency <br/>
     <br/>
