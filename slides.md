@@ -12,10 +12,20 @@ layout: center
   - What is a ❝Spacing System❞
   - What is the ❝Root Font Size❞
   - PX vs REM
+
+  <br/>
+
   - The Root Font Size Mismatch
   - Lack of a Shared Spacing System
   - The Impact on Accessibility
-  - The Solution
+
+  <br/>
+
+  - The Final Solution
+    - Manual Steps
+    - Automated Steps
+    - Testing Step
+    - Preventive Steps
 
 ---
 layout: quote
@@ -45,7 +55,7 @@ layout: fact
   ~ <br/>
   Px is an absolute value <br/>
   ~ <br/>
-  Rem is a relative value <br/>
+  Rem is a relative value: it's a multiple of ❝root font size❞ <br/>
   ~ <br/>
 </span>
 
@@ -156,31 +166,190 @@ layout: fact
 
 <span style="margin: auto; text-align: left;">
   ~ <br/>
-  Decide what property needs to change with the root font size <br/>
+  Decide what property needs to grow with the root font size <br/>
   ~ <br/>
   Covert all relevant CSS properties from px to rem <br/>
   ~ <br/>
 </span>
 
 ---
+layout: fact
+---
 
-# The Solution
-The solution is divided into a manual step, an automated step, and a preventive step for future consistency.
+# The Final Solution
 
-1. manual step: 
-    - Develop a standardized list of commonly used sizes
-    - Update the root font size from <code>15px</code> to <code>16px</code>
-
-2. automatic step:
-    - Adjust all rem-based values to align with the new root size
-    - Replace all current sizes with the closest one in the standardized sizes list
-    - Covert all relevant CSS properties from px to rem
-    - Reduce conversion errors as much as possible, consider 3,000 conversion
-
-3. preventive step:
-    - Enforce strict usage of the standardized sizes list to maintain consistency going forward.
+  <span style="margin: auto; text-align: left;">
+    ~ <br/>
+    Spacing system <br/>
+    ~ <br/>
+    Convertion <br/>
+    ~ <br/>
+    Testing <br/>
+    ~ <br/>
+    Enforce future consistency <br/>
+    ~ <br/>
+  </span>
 
 ---
-layout: iframe
+
+# Spacing system
+Designers and Developers deciding a common language
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+    .container {
+        font-size: 7px;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
+    .column {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        flex: 1;
+        background-color: #1f1f1f;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .group {
+        border: 1px dashed #ccc;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .group-title {
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 5px;
+    }
+    .column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .column li {
+        padding: 2px 0;
+    }
+</style>
+
+<div class="container">
+    <div class="column">
+        <div class="group">
+            <div class="group-title">Small Sizes</div>
+            <ul>
+                <li>space-0 → 0px</li>
+                <li>space-025 → 1px</li>
+            </ul>
+        </div>
+        <div class="group">
+            <div class="group-title">Base Sizes</div>
+            <ul>
+                <li>space-05 → 2px</li>
+                <li>space-1 → 4px</li>
+                <li>space-2 → 8px</li>
+                <li>space-3 → 12px</li>
+                <li>space-4 → 16px</li>
+                <li>space-5 → 20px</li>
+                <li>space-6 → 24px</li>
+                <li>space-7 → 28px</li>
+                <li>space-8 → 32px</li>
+                <li>space-9 → 36px</li>
+                <li>space-10 → 40px</li>
+                <li>space-11 → 44px</li>
+                <li>space-12 → 48px</li>
+            </ul>
+        </div>
+    </div>
+    <div class="column">
+        <div class="group">
+            <div class="group-title">Medium Sizes</div>
+            <ul>
+                <li>space-16 → 64px</li>
+                <li>space-20 → 80px</li>
+                <li>space-24 → 96px</li>
+                <li>space-28 → 112px</li>
+                <li>space-32 → 128px</li>
+                <li>space-36 → 144px</li>
+                <li>space-40 → 160px</li>
+                <li>space-44 → 176px</li>
+                <li>space-48 → 192px</li>
+                <li>space-52 → 208px</li>
+                <li>space-56 → 224px</li>
+                <li>space-60 → 240px</li>
+            </ul>
+        </div>
+    </div>
+    <div class="column">
+        <div class="group">
+            <div class="group-title">Large Sizes</div>
+            <ul>
+                <li>space-70 → 280px</li>
+                <li>space-80 → 320px</li>
+                <li>space-90 → 360px</li>
+                <li>space-100 → 400px</li>
+            </ul>
+        </div>
+        <div class="group">
+            <div class="group-title">Extra Large Sizes</div>
+            <ul>
+                <li>space-120 → 480px</li>
+                <li>space-140 → 560px</li>
+                <li>space-160 → 640px</li>
+                <li>space-180 → 720px</li>
+            </ul>
+        </div>
+        <div class="group">
+            <div class="group-title">Huge Sizes</div>
+            <ul>
+                <li>space-220 → 880px</li>
+                <li>space-260 → 1040px</li>
+                <li>space-300 → 1200px</li>
+                <li>space-340 → 1360px</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+---
+layout: iframe-right
 url: https://hoomes.francescomeli.com/v1/proxy?url=https://github.com/pinkynrg/px-rem-optimizer
+---
+
+# Convertion
+Convert of 3000+ values that align with the spacing system
+
+- started doing by head 
+- didn't work
+- created automated script (24h of work to fine tune the tool)
+
+---
+
+# Testing
+picture of every page of beefree app to compare before and after, and see what had to be fixed
+
+- talk about the testing
+
+---
+
+# Enforce future consistency
+created a styling rule to force us to use variables instead of raw sizes
+
+- talk about the linting
+
+---
+layout: end
+---
+
+# Final Toughts
+
+A unified spacing and font sizing system fosters clarity, accessibility, and visual consistency. By standardizing our approach and enforcing it with automated checks, we’ve set a solid foundation for scalable and harmonious designs moving forward.
+
 ---
