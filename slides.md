@@ -1,5 +1,4 @@
 ---
-# background: './assets/cover.webp'
 layout: intro
 ---
 
@@ -74,11 +73,9 @@ image: ./assets/story_15px.webp
 
 # Problem #1: The Root Font Size Mismatch
 
-<i>
+<div class="book-quote">
   "Once, in a bustling digital realm, an adventurous developer quietly changed the root font to 15px, neglecting to inform the designers. Now, the designers spoke in 16px, while the developers spoke in 15px—and chaos ensued"
-</i>
-
-<br/>
+</div>
 
 <div class="problem">
   <p>Example of the Problem</p>
@@ -100,7 +97,7 @@ image: ./assets/story_15px.webp
 
 <ul class="todo">
   <li> Update root font size from <code>15px</code> to <code>16px</code> </li>
-  <li> Convert rem values considering the new root font size and multiplying by a factor <code>15/16</code> </li>
+  <li> Convert rem values considering the new root font size and multiply by a factor <code>15/16</code> </li>
 </ul>
 
 ---
@@ -110,11 +107,9 @@ image: ./assets/story_design.webp
 
 # Problem #2: Lack of a Shared Spacing System
 
-<i>
+<div class="book-quote">
   "But without a shared standard, each crafted their parts in slightly different sizes. Slowly, the design grew patchy, and what was once seamless became scattered—a web of mismatched pieces."
-</i>
-
-<br/>
+</div>
 
 <div class="problem">
   <p> Example of the Problem </p>
@@ -145,9 +140,9 @@ image: ./assets/story_a11y.webp
 
 # Problem #3: The Impact on Accessibility
 
-<i>
-  "But by using px instead of rem and using a hard-coded 15px root font size, they had created rigid designs. When villagers tried to zoom, the components refused to grow, leaving many struggling to see. And so, they learned: flexibility is key to a design everyone can use."
-</i>
+<div class="book-quote">
+  "But by using px instead of rem and using a hard-coded 15 px root font size, they had created rigid designs. When villagers tried to zoom, the components refused to grow, leaving many struggling to see. And so, they learned: flexibility is key to a design everyone can use."
+</div>
 
 <div class="problem">
   <p> Example of the Problem </p>
@@ -320,7 +315,7 @@ Designers and Developers deciding a common language (thank to Fabio Mojetta)
 ---
 layout: image-left
 image: ./assets/graph.png
-backgroundSize: 50vh
+backgroundSize: 65vh
 ---
 
 # Converting to the new Spacing System
@@ -335,7 +330,6 @@ Facts about px-rem-optimizer script:
       - bee-ui-library
       - bee-connectors
 
-
 ---
 
 # Enforce future consistency
@@ -344,6 +338,60 @@ setup of style rules to force us to use variables instead of raw sizes
 - Add space variables in Figma for easy access during design and development
 - Code plugin to forbid usage of arbitrary size 
 - Code plugin to force usage of design system's sizes (thank to Efrem Bonfiglio)
+
+---
+
+<style>
+
+  /* Container to hold the two iframes side-by-side */
+  .iframe-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  /* Styling for individual iframes to zoom out */
+  iframe {
+    width: 100%;
+    height: 90vh;
+    zoom: 0.5;
+    transform-origin: 0 0; /* Anchors the zoom effect to the top-left corner */
+    border: none; /* Removes iframe border */
+  }
+
+  /* Ensures full-width alignment without scrolling */
+  .before, .after {
+    flex: 1;
+    overflow: hidden; /* Prevents scrolling within the iframe */
+    position: relative; /* Allows positioning of titles */
+  }
+
+  /* Styles for "Before" and "After" titles */
+  .before::before, .after::before {
+    content: attr(class);
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #444;
+    background-color: #f5f5f5;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<div class="iframe-container">
+  <div class="before">
+    <iframe src="https://zustand.beepro.io/app/login"></iframe>
+  </div>
+  <div class="after">
+    <iframe src="https://router.beepro.io/app/login"></iframe>
+  </div>
+</div>
 
 ---
 layout: end
