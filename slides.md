@@ -63,12 +63,12 @@ Use rem for font sizes to make it more accessible to users who have changed thei
 
 ---
 layout: image
-image: ./assets/box_px_rem.gif
+image: ./public/box_px_rem.gif
 backgroundSize: 30rem
 ---
 ---
 layout: image-left
-image: ./assets/story_15px.webp
+image: ./public/story_15px.webp
 ---
 
 # Problem #1: The Root Font Size Mismatch
@@ -90,7 +90,7 @@ image: ./assets/story_15px.webp
 
 ---
 layout: image-left
-image: ./assets/story_15px.webp
+image: ./public/story_15px.webp
 ---
 
 # Problem #1: To Do List
@@ -102,7 +102,7 @@ image: ./assets/story_15px.webp
 
 ---
 layout: image-left
-image: ./assets/story_design.webp
+image: ./public/story_design.webp
 ---
 
 # Problem #2: Lack of a Shared Spacing System
@@ -122,7 +122,7 @@ image: ./assets/story_design.webp
 
 ---
 layout: image-left
-image: ./assets/story_design.webp
+image: ./public/story_design.webp
 ---
 
 # Problem #2: To Do List
@@ -135,7 +135,7 @@ image: ./assets/story_design.webp
 
 ---
 layout: image-left
-image: ./assets/story_a11y.webp
+image: ./public/story_a11y.webp
 ---
 
 # Problem #3: The Impact on Accessibility
@@ -155,7 +155,7 @@ image: ./assets/story_a11y.webp
 
 ---
 layout: image-left
-image: ./assets/story_a11y.webp
+image: ./public/story_a11y.webp
 ---
 
 # Problem #3: To Do List
@@ -312,7 +312,7 @@ Designers and Developers deciding a common language (thank to Fabio Mojetta)
 
 ---
 layout: image-left
-image: ./assets/graph.png
+image: ./public/graph.png
 backgroundSize: 65vh
 ---
 
